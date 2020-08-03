@@ -1,271 +1,263 @@
-/* Задание на урок:
+'use strict';
 
-1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
-'Сколько фильмов вы уже посмотрели?'
+// const num = 12.2;
+// console.log(Math.round(num));
 
-2) Создать объект personalMovieDB и в него поместить такие свойства:
-    - count - сюда передается ответ на первый вопрос
-    - movies - в это свойство поместить пустой объект
-    - actors - тоже поместить пустой объект
-    - genres - сюда поместить пустой массив
-    - privat - в это свойство поместить boolean(логическое) значение false
+// const numSecond = '12.2px';
+// console.log(parseInt(numSecond));
+// console.log(parseFloat(numSecond));
 
-3) Задайте пользователю по два раза вопросы:
-    - 'Один из последних просмотренных фильмов?'
-    - 'На сколько оцените его?'
-Ответы стоит поместить в отдельные переменные
-Записать ответы в объект movies в формате: 
-    movies: {
-        'logan': '8.1'
-    }
+////////////////  19. Callback- функции  ////////////////
+//  (Callback- функции которая должна быть выполнена после того как другая функция завершит свое выполнение!)
 
-Проверить, чтобы все работало без ошибок в консоли */
-
-// 'use strict';
-
-////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////// Практика, ч1.//////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели? ', '');
-
-// const personalMovieDB = {
-//   count: numberOfFilms,
-//   movies: {},
-//   actors: {},
-//   genres: [],
-//   privat: false
-// };
-
-// let lastFilms = prompt('Один из последних просмотренных фильмов? ', ''),
-//   ratingFilms = +prompt('На сколько оцените его? ', ''),
-//   lastFilms2 = prompt('Один из последних просмотренных фильмов? ', ''),
-//   ratingFilms2 = +prompt('На сколько оцените его? ', '');
-
-// personalMovieDB.movies[lastFilms] = ratingFilms;
-// personalMovieDB.movies[lastFilms2] = ratingFilms2;
-
-// console.log(personalMovieDB);
-
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-/* Задание на урок:
-
-1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
-
-2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
-отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
-возвращаем пользователя к вопросам опять
-
-3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
-"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
-"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
-
-4) Потренироваться и переписать цикл еще двумя способами*/
-
-////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////// Практика, ч2.//////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели? ', '');
-
-// const personalMovieDB = {
-//   count: numberOfFilms,
-//   movies: {},
-//   actors: {},
-//   genres: [],
-//   privat: false
-// };
-
-// // 1)
-// for (let i = 0; i < 2; i++) {
-//   let lastFilms = prompt('Один из последних просмотренных фильмов? ', ''),
-//     ratingFilms = +prompt('На сколько оцените его? ', '');
-
-//   if (
-//     lastFilms != null &&
-//     ratingFilms != null &&
-//     lastFilms != '' &&
-//     ratingFilms != '' &&
-//     lastFilms.length < 50
-//   ) {
-//     personalMovieDB.movies[lastFilms] = ratingFilms;
-//     console.log('Done!');
-//   } else {
-//     console.log('Error');
-//     i--;
-//   }
-// }
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-// 2)
-// let i = 0;
-
-// while (i < 2) {
-//   let lastFilms = prompt('Один из последних просмотренных фильмов? ', ''),
-//     ratingFilms = +prompt('На сколько оцените его? ', '');
-//   i++;
-
-//   if (
-//     lastFilms != null &&
-//     ratingFilms != null &&
-//     lastFilms != '' &&
-//     ratingFilms != '' &&
-//     lastFilms.length < 50
-//   ) {
-//     personalMovieDB.movies[lastFilms] = ratingFilms;
-//     console.log('Done!');
-//   } else {
-//     console.log('Error');
-//     i--;
-//   }
-// }
-////////////////////////////////////////////////////////////////////////////////
-// 3)
-// let i = 0;
-
-// do {
-//   let lastFilms = prompt('Один из последних просмотренных фильмов? ', ''),
-//     ratingFilms = +prompt('На сколько оцените его? ', '');
-//   i++;
-
-//   if (
-//     lastFilms != null &&
-//     ratingFilms != null &&
-//     lastFilms != '' &&
-//     ratingFilms != '' &&
-//     lastFilms.length < 50
-//   ) {
-//     personalMovieDB.movies[lastFilms] = ratingFilms;
-//     console.log('Done!');
-//   } else {
-//     console.log('Error');
-//     i--;
-//   }
-// } while (i < 2);
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-// if (personalMovieDB.count < 10) {
-//   console.log('Просмотрено довольно мало фильмов');
-// } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-//   console.log('Вы классический зритель');
-// } else if (personalMovieDB.count >= 30) {
-//   console.log('Вы киноман');
-// } else {
-//   console.log('Произошла ошибка');
+// function first() {
+//   // Do something
+//   setTimeout(function () {
+//     console.log(1);
+//   }, 500);
 // }
 
-// console.log(personalMovieDB);
+// function second() {
+//   console.log(2);
+// }
 
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+// first();
+// second();
 
-////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////// Практика, ч3.//////////////////
-////////////////////////////////////////////////////////////////////////////////
+// function learnJS(lang, callback) {
+//   console.log(`Я учу: ${lang}`);
+//   callback();
+// }
 
-/* Задание на урок:
+// function done() {
+//   console.log('Я прошел этот урок!');
+// }
 
-1) Первую часть задания повторить по уроку
+// learnJS('JavaScript', done);
 
-2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
-false - выводит в консоль главный объект программы
+/////////////  20. Объекты, деструктуризация объектов (ES6)  /////////////
 
-3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
-"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
-genres
+//  (Прототипно ориентированный язык - Java Script)
 
-P.S. Функции вызывать не обязательно*/
-
-let numberOfFilms;
-
-function start() {
-  numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели? ', '');
-
-  while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели? ', '');
+const options = {
+  name: 'test',
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: 'black',
+    bg: 'red'
+  },
+  makeTest: function () {
+    console.log('Test');
   }
-}
-
-start();
-
-const personalMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false
 };
 
-function rememberMyFilms() {
-  // 1)
-  for (let i = 0; i < 2; i++) {
-    let lastFilms = prompt('Один из последних просмотренных фильмов? ', ''),
-      ratingFilms = +prompt('На сколько оцените его? ', '');
+options.makeTest();
 
-    if (
-      lastFilms != null &&
-      ratingFilms != null &&
-      lastFilms != '' &&
-      ratingFilms != '' &&
-      lastFilms.length < 50
-    ) {
-      personalMovieDB.movies[lastFilms] = ratingFilms;
-      console.log('Done!');
-    } else {
-      console.log('Error');
-      i--;
-    }
+const { border, bg } = options.colors;
+console.log(border);
+
+// Перебор 1
+// console.log(Object.keys(options));
+// console.log(Object.keys(options).length);
+
+/////////////////////
+// console.log(options['colors']['border']);
+
+// delete options.name;
+// console.log(options);
+
+// Перебор 2
+
+// let counter = 0;
+// for (let key in options) {
+//   if (typeof options[key] === 'object') {
+//     for (let i in options[key]) {
+//       console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//     }
+//   } else {
+//     console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//     counter++;
+//   }
+// }
+
+// console.log(counter);
+
+/////////////  21. Массивы и псевдомассивы  /////////////
+
+// const arr = [1, 2, 3, 6, 8];
+// arr[99] = 0;
+// console.log(arr.length);
+// console.log(arr);
+
+// arr.forEach(function (item, i, arr) {
+//   console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+
+// // arr.pop();
+// arr.push(10);
+
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+// for (let value of arr) {
+//   console.log(value);
+// }
+
+// const str = prompt('', '');
+// const products = str.split(', ');
+// console.log(products);
+
+// const arr = [1, 2, 3, 6, 8];
+
+// or
+
+// const arr = [10, 2, 30, 16, 8];
+// arr.sort(compareNum);
+// console.log(arr);
+
+// function compareNum(a, b) {
+//   return a - b;
+// }
+
+// const str = prompt('', '');
+// const products = str.split(', ');
+// // console.log(products);
+// console.log(products.join('; '));
+
+//  псевдомассив - просто структура , которая хранит данные по порядку
+
+/////////////  22. Передача по ссылке или по значению, Spread оператор(ES6 - ES9); /////////////
+
+// const obj = {
+//   a: 5,
+//   b: 1
+// };
+
+// const copy = obj;
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+function copy(mainObj) {
+  let objCopy = {};
+  let key;
+  for (key in mainObj) {
+    objCopy[key] = mainObj[key];
   }
+
+  return objCopy;
 }
 
-rememberMyFilms();
-
-function detectPersonalLevel() {
-  if (personalMovieDB.count < 10) {
-    console.log('Просмотрено довольно мало фильмов');
-  } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-    console.log('Вы классический зритель');
-  } else if (personalMovieDB.count >= 30) {
-    console.log('Вы киноман');
-  } else {
-    console.log('Произошла ошибка');
+const numbers = {
+  a: 2,
+  b: 5,
+  c: {
+    x: 7,
+    y: 4
   }
+};
+
+const newNumbers = copy(numbers);
+
+newNumbers.a = 10;
+newNumbers.c.x = 10;
+
+// console.log(newNumbers);
+// console.log(numbers);
+
+const add = {
+  d: 17,
+  e: 20
+};
+
+// console.log(Object.assign(numbers, add));
+const clone = Object.assign({}, add);
+
+clone.d = 20;
+
+// console.log(add);
+// console.log(clone);
+
+//  3й метод
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'lksdfnlsnfl';
+
+console.log(newArray);
+console.log(oldArray);
+
+//  (assign()) оператор(ES6 - ES9)  (оператор разворота)
+
+const video = ['youtube', 'vimeo', 'rutube'],
+  blogs = ['wordpres', 'livejournal', 'bloger'],
+  internet = [...video, ...blogs, 'vk', 'facebook'];
+
+console.log(internet);
+
+function log(a, b, c) {
+  console.log(a);
+  console.log(b);
+  console.log(c);
 }
 
-detectPersonalLevel();
+const num = [2, 5, 7];
 
-function showMyDB(hidden) {
-  if (!hidden) {
-    console.log(personalMovieDB);
+log(...num);
+
+// 4й метод
+
+const array = ['a', 'b'];
+
+const newAarray = [...array];
+
+const q = {
+  one: 1,
+  two: 2
+};
+
+const newObj = { ...q };
+
+//  23. Основы ООП, прототипно-ориентированное наследование
+
+// let str = 'some';
+// let strObj = new String(str);
+
+// console.log(typeof(str));
+// console.log(typeof(strObj));
+
+console.dir([1, 2, 3]);
+
+/////
+
+const soldir = {
+  //  1
+  health: 400,
+  armor: 100,
+  sayHello: function () {
+    console.log('Hello');
   }
-}
+};
 
-showMyDB(personalMovieDB.privat);
+const john = Object.create(soldir); // Джон прототипно наследуеться от солдата
 
-function writeYourGenres() {
-  for (let i = 1; i <= 3; i++) {
-    personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
-  }
-}
+// const john = {
+//   //  1
+//   health: 100
+// };
 
-writeYourGenres();
+// john.__proto__ = soldir; //  Старая версия использования
+// Object.setPrototypeOf(john, soldir); //  1
 
-// console.log(personalMovieDB);
+john.sayHello(); //  1
 
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+// console.log(john.armor);
+
+// console.log(john.sayHello);
