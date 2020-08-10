@@ -39,23 +39,23 @@
 
 //  (Прототипно ориентированный язык - Java Script)
 
-const options = {
-  name: 'test',
-  width: 1024,
-  height: 1024,
-  colors: {
-    border: 'black',
-    bg: 'red'
-  },
-  makeTest: function () {
-    console.log('Test');
-  }
-};
+// const options = {
+//   name: 'test',
+//   width: 1024,
+//   height: 1024,
+//   colors: {
+//     border: 'black',
+//     bg: 'red'
+//   },
+//   makeTest: function () {
+//     console.log('Test');
+//   }
+// };
 
-options.makeTest();
+// options.makeTest();
 
-const { border, bg } = options.colors;
-console.log(border);
+// const { border, bg } = options.colors;
+// console.log(border);
 
 // Перебор 1
 // console.log(Object.keys(options));
@@ -144,86 +144,88 @@ console.log(border);
 // console.log(copy);
 // console.log(obj);
 
-function copy(mainObj) {
-  let objCopy = {};
-  let key;
-  for (key in mainObj) {
-    objCopy[key] = mainObj[key];
-  }
+///////////////////////////
+// function copy(mainObj) {
+//   let objCopy = {};
+//   let key;
+//   for (key in mainObj) {
+//     objCopy[key] = mainObj[key];
+//   }
 
-  return objCopy;
-}
+//   return objCopy;
+// }
 
-const numbers = {
-  a: 2,
-  b: 5,
-  c: {
-    x: 7,
-    y: 4
-  }
-};
+// const numbers = {
+//   a: 2,
+//   b: 5,
+//   c: {
+//     x: 7,
+//     y: 4
+//   }
+// };
 
-const newNumbers = copy(numbers);
+// const newNumbers = copy(numbers);
 
-newNumbers.a = 10;
-newNumbers.c.x = 10;
+// newNumbers.a = 10;
+// newNumbers.c.x = 10;
+///////////////////////////
 
 // console.log(newNumbers);
 // console.log(numbers);
 
-const add = {
-  d: 17,
-  e: 20
-};
+// const add = {
+//   d: 17,
+//   e: 20
+// };
 
-// console.log(Object.assign(numbers, add));
-const clone = Object.assign({}, add);
+// // console.log(Object.assign(numbers, add));
+// const clone = Object.assign({}, add);
 
-clone.d = 20;
+// clone.d = 20;
 
 // console.log(add);
 // console.log(clone);
 
 //  3й метод
 
-const oldArray = ['a', 'b', 'c'];
-const newArray = oldArray.slice();
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice();
 
-newArray[1] = 'lksdfnlsnfl';
+// newArray[1] = 'lksdfnlsnfl';
 
-console.log(newArray);
-console.log(oldArray);
+// console.log(newArray);
+// console.log(oldArray);
 
-//  (assign()) оператор(ES6 - ES9)  (оператор разворота)
+// //  (assign()) оператор(ES6 - ES9)  (оператор разворота)
 
-const video = ['youtube', 'vimeo', 'rutube'],
-  blogs = ['wordpres', 'livejournal', 'bloger'],
-  internet = [...video, ...blogs, 'vk', 'facebook'];
+// const video = ['youtube', 'vimeo', 'rutube'],
+//   blogs = ['wordpres', 'livejournal', 'bloger'],
+//   internet = [...video, ...blogs, 'vk', 'facebook'];
 
-console.log(internet);
+// console.log(internet);
 
-function log(a, b, c) {
-  console.log(a);
-  console.log(b);
-  console.log(c);
-}
+// function log(a, b, c) {
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+// }
 
-const num = [2, 5, 7];
+// const num = [2, 5, 7];
 
-log(...num);
+// log(...num);
 
-// 4й метод
+// // 4й метод
 
-const array = ['a', 'b'];
+// const array = ['a', 'b'];
 
-const newAarray = [...array];
+// const newAarray = [...array];
 
-const q = {
-  one: 1,
-  two: 2
-};
+// const q = {
+//   one: 1,
+//   two: 2
+// };
 
-const newObj = { ...q };
+// const newObj = { ...q };
 
 //  23. Основы ООП, прототипно-ориентированное наследование
 
@@ -233,7 +235,7 @@ const newObj = { ...q };
 // console.log(typeof(str));
 // console.log(typeof(strObj));
 
-console.dir([1, 2, 3]);
+// console.dir([1, 2, 3]);
 
 /////
 
