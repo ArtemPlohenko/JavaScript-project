@@ -167,7 +167,7 @@ const personalMovieDB = {
       ).toLowerCase();
       if (genres === '' || genres === null) {
         console.log('Вы ввели некорректные данные или не ввели их вовсе');
-        i--;
+        i--; // Вернуть назад
       } else {
         personalMovieDB.genres = genres.split(', ');
         personalMovieDB.genres.sort();
